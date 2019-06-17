@@ -1,0 +1,21 @@
+A note: 
+
+from import Statements
+An alternative form of the import statement is composed of the from keyword, followed by the module name, the import keyword, and a star; for example, from random import *.
+
+With this form of import statement, calls to functions in random will not need the random. prefix. However, using the full name makes for more readable code, so it is better to use the normal form of the import statement.
+
+
+Ending a Program Early with sys.exit()
+The last flow control concept to cover is how to terminate the program. This always happens if the program execution reaches the bottom of the instructions. However, you can cause the program to terminate, or exit, by calling the sys.exit() function. Since this function is in the sys module, you have to import sys before your program can use it.
+
+Open a new file editor window and enter the following code, saving it as exitExample.py:
+
+import sys
+
+while True:
+    print('Type exit to exit.')
+    response = input()
+    if response == 'exit':
+        sys.exit()
+    print('You typed ' + response + '.')

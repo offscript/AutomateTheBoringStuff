@@ -1,0 +1,38 @@
+Strings are immutable in python. Tuples are like lists, but also immutable.
+
+The proper way to “mutate” a string is to use slicing and concatenation to build a new string by copying from parts of the old string. Enter the following into the interactive shell:
+
+
+>>> name = 'Zophie a cat'
+>>> newName = name[0:7] + 'the' + name[8:12]
+>>> name
+'Zophie a cat'
+>>> newName
+'Zophie the cat'
+
+If you have only one value in your tuple, you can indicate this by placing a trailing comma after the value inside the parentheses. Otherwise, Python will think you’ve just typed a value inside regular parentheses. The comma is what lets Python know this is a tuple value. (Unlike some other programming languages, in Python it’s fine to have a trailing comma after the last item in a list or tuple.) Enter the following type() function calls into the interactive shell to see the distinction:
+
+
+>>> type(('hello',))
+<class 'tuple'>
+>>> type(('hello'))
+<class 'str'>
+
+You can use tuples to convey to anyone reading your code that you don’t intend for that sequence of values to change. If you need an ordered sequence of values that never changes, use a tuple. A second benefit of using tuples instead of lists is that, because they are immutable and their contents don’t change, Python can implement some optimizations that make code using tuples slightly faster than code using lists.
+
+Converting Types with the list() and tuple() Functions #bold
+Just like how str(42) will return '42', the string representation of the integer 42, the functions list() and tuple() will return list and tuple versions of the values passed to them. Enter the following into the interactive shell, and notice that the return value is of a different data type than the value passed:
+
+
+>>> tuple(['cat', 'dog', 5])
+('cat', 'dog', 5)
+>>> list(('cat', 'dog', 5))
+['cat', 'dog', 5]
+>>> list('hello')
+['h', 'e', 'l', 'l', 'o']
+Converting a tuple to a list is handy if you need a mutable version of a tuple value.
+
+
+References
+
+Python uses references whenever variables must store values of mutable data types, such as lists or dictionaries. For values of immutable data types such as strings, integers, or tuples, Python variables will store the value itself.
