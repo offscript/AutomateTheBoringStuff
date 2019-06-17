@@ -1,0 +1,51 @@
+Raw Strings
+
+You can place an r before the beginning quotation mark of a string to make it a raw string. A raw string completely ignores all escape characters and prints any backslash that appears in the string. For example, type the following into the interactive shell:
+
+
+>>> print(r'That is Carol\'s cat.')
+That is Carol\'s cat.
+Because this is a raw string, Python considers the backslash as part of the string and not as the start of an escape character. Raw strings are helpful if you are typing string values that contain many backslashes, such as the strings used for regular expressions described in the next chapter.
+
+
+
+
+Removing Whitespace with strip(), rstrip(), and lstrip()
+
+Sometimes you may want to strip off whitespace characters (space, tab, and newline) from the left side, right side, or both sides of a string. The strip() string method will return a new string without any whitespace characters at the beginning or end. The lstrip() and rstrip() methods will remove whitespace characters from the left and right ends, respectively. Enter the following into the interactive shell:
+
+
+>>> spam = '    Hello World     '
+>>> spam.strip()
+'Hello World'
+>>> spam.lstrip()
+'Hello World '
+>>> spam.rstrip()
+'    Hello World'
+Optionally, a string argument will specify which characters on the ends should be stripped. Enter the following into the interactive shell:
+
+
+>>> spam = 'SpamSpamBaconSpamEggsSpamSpam'
+>>> spam.strip('ampS')
+'BaconSpamEggs'
+Passing strip() the argument 'ampS' will tell it to strip occurences of a, m, p, and capital S from the ends of the string stored in spam. The order of the characters in the string passed to strip() does not matter: strip('ampS') will do the same thing as strip('mapS') or strip('Spam').
+
+
+
+Copying and Pasting Strings with the pyperclip Module
+
+The pyperclip module has copy() and paste() functions that can send text to and receive text from your computer’s clipboard. Sending the output of your program to the clipboard will make it easy to paste it to an email, word processor, or some other software.
+
+Pyperclip does not come with Python. To install it, follow the directions for installing third-party modules in Appendix A. After installing the pyperclip module, enter the following into the interactive shell:
+
+
+>>> import pyperclip
+>>> pyperclip.copy('Hello world!')
+>>> pyperclip.paste()
+'Hello world!'
+Of course, if something outside of your program changes the clipboard contents, the paste() function will return it. For example, if I copied this sentence to the clipboard and then called paste(), it would look like this:
+
+
+>>> pyperclip.paste()
+'For example, if I copied this sentence to the clipboard and then called
+paste(), it would look like this:'
