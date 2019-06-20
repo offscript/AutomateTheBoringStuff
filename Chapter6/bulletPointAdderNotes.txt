@@ -1,0 +1,19 @@
+Prompt:
+
+Step 1: Copy and Paste from the Clipboard
+You want the bulletPointAdder.py program to do the following:
+
+Paste text from the clipboard
+
+Do something to it
+
+Copy the new text to the clipboard
+
+That second step is a little tricky, but steps 1 and 3 are pretty straightforward: They just involve the pyperclip.copy() and pyperclip.paste() functions. For now, let’s just write the part of the program that covers steps 1 and 3. Enter the following, saving the program as bulletPointAdder.py:
+
+
+Notes:
+
+This is a really good way to think about scripting, and probably a lot of programming, but especially scripting programs where the "Do something to it" comes naturally to some who does a lot of OOP. Since you don't know too much about systems, the challenging parts of scripting will come in thinking about where exactly the data comes from, in what form, and from what tool, and where exactly we're going to put it, in what form, with what tool.
+
+ 
